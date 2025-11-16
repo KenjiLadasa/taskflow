@@ -1,0 +1,42 @@
+package com.main.taskflow;
+
+import javafx.geometry.Pos;
+import javafx.scene.control.Button;
+import javafx.scene.layout.VBox;
+import javafx.scene.text.Font;
+import javafx.scene.text.Text;
+import javafx.scene.layout.StackPane;
+import javafx.scene.paint.Color;
+
+public class FrontPage {
+
+    private final StackPane root;
+
+    public FrontPage() {
+        root = new StackPane();
+        root.setStyle("-fx-background-color: black;");
+
+        Text title = new Text("TASK FLOW");
+        title.setFill(Color.web("#8d2cff"));
+        title.setFont(Font.font("Arial Black", 90));
+
+        Button startButton = new Button("LET'S GET STARTED");
+        startButton.setStyle(
+                "-fx-background-color: #8d2cff;" +
+                        "-fx-text-fill: white;" +
+                        "-fx-font-size: 14px;" +
+                        "-fx-font-weight: bold;" +
+                        "-fx-background-radius: 20;" +
+                        "-fx-padding: 10 20;"
+        );
+
+        VBox vbox = new VBox(40, title, startButton);
+        vbox.setAlignment(Pos.CENTER);
+
+        root.getChildren().add(vbox);
+    }
+
+    public StackPane getView() {
+        return root;
+    }
+}
