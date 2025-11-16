@@ -1,27 +1,25 @@
-    package com.main.taskflow;
+package com.example.yourprojectname;
 
-    import javafx.fxml.FXML;
-    import javafx.fxml.FXMLLoader;
-    import javafx.scene.Parent;
-    import javafx.scene.Scene;
-    import javafx.scene.control.Button;
-    import javafx.stage.Stage;
+import javafx.fxml.FXML;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.control.Button;
 
-    import java.util.Objects;
+public class FrontPageController {
 
-    public class FrontPageController {
+    @FXML
+    private Button startButton;
 
-        @FXML
-        private Button startButton;
-
-        @FXML
-        private void onStart() {
-            try {
-                Parent dashboard = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("dashboard.fxml")));
-                Stage stage = (Stage) startButton.getScene().getWindow();
-                stage.setScene(new Scene(dashboard, 900, 500));
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
+    @FXML
+    private void goToLogin() {
+        try {
+            Parent loginRoot = FXMLLoader.load(getClass().getResource("/views/login.fxml"));
+            Stage stage = (Stage) startButton.getScene().getWindow();
+            stage.setScene(new Scene(loginRoot, 600, 600));
+        } catch (Exception e) {
+            e.printStackTrace();
         }
     }
+}
