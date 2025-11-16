@@ -1,23 +1,25 @@
-package com.main.taskflow;
+package com.example.yourprojectname;
 
-import javafx.application.Application;
+import javafx.fxml.FXML;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.control.Button;
 
-public class HelloApplication extends Application {
+public class FrontPageController {
 
-    @Override
-    public void start(Stage stage) {
-        stage.setTitle("Task Flow");
+    @FXML
+    private Button startButton;
 
-        FrontPage frontPage = new FrontPage();
-        Scene scene = new Scene(frontPage.getView(), 900, 500);
-
-        stage.setScene(scene);
-        stage.show();
-    }
-
-    public static void main(String[] args) {
-        launch();
+    @FXML
+    private void goToLogin() {
+        try {
+            Parent loginRoot = FXMLLoader.load(getClass().getResource("/views/login.fxml"));
+            Stage stage = (Stage) startButton.getScene().getWindow();
+            stage.setScene(new Scene(loginRoot, 600, 600));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }
