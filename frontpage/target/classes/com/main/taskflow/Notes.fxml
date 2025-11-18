@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" prefWidth="1200" prefHeight="700">
+
+    <!-- LEFT SIDEBAR -->
+    <left>
+        <VBox spacing="20" style="-fx-background-color: #F4F4F4;" prefWidth="220">
+            <padding>
+                <Insets top="20" left="20" right="20" bottom="20"/>
+            </padding>
+
+            <!-- Avatar + Name -->
+            <HBox spacing="10" alignment="CENTER_LEFT">
+                <Circle radius="22" style="-fx-fill: #cccccc;"/>
+                <VBox spacing="2">
+                    <Label text="LDCU KO" style="-fx-font-size: 15px; -fx-font-weight: bold;"/>
+                    <Label text="Student" style="-fx-font-size: 11px; -fx-text-fill: gray;"/>
+                </VBox>
+            </HBox>
+
+            <!-- Menu -->
+            <VBox spacing="15">
+                <Button text="Home" maxWidth="200" style="-fx-alignment: CENTER_LEFT;" fx:id="btnHome"/>
+                <Button text="Notes" maxWidth="200" style="-fx-alignment: CENTER_LEFT;" fx:id="btnNotes"/>
+                <Button text="To-dos" maxWidth="200" style="-fx-alignment: CENTER_LEFT;" fx:id="btnTodos"/>
+                <Button text="Setting" maxWidth="200" style="-fx-alignment: CENTER_LEFT;" fx:id="btnSettings"/>
+            </VBox>
+        </VBox>
+    </left>
+
+    <!-- MAIN CONTENT -->
+    <center>
+        <VBox spacing="15">
+            <Label text="All Notes" style="-fx-font-size: 18px; -fx-font-weight: bold;"/>
+
+            <GridPane hgap="15" vgap="15">
+                <padding>
+                    <Insets top="10" left="10" right="10" bottom="10"/>
+                </padding>
+
+                <!-- First box: create new note -->
+                <StackPane style="-fx-background-color: #cccccc; -fx-border-radius: 5; -fx-background-radius: 5;" prefWidth="150" prefHeight="150" GridPane.rowIndex="0" GridPane.columnIndex="0">
+                    <Label text="+" style="-fx-font-size: 36px; -fx-text-fill: gray;"/>
+                </StackPane>
+
+                <!-- Example note box -->
+                <VBox style="-fx-background-color: #e0e0e0; -fx-padding: 10; -fx-border-radius: 5; -fx-background-radius: 5;" prefWidth="150" prefHeight="150" GridPane.rowIndex="0" GridPane.columnIndex="1">
+                    <Text wrappingWidth="130" text="Through nights so long and skies so gray, The heart still whispers, 'Find your way.'"/>
+                    <HBox spacing="5" alignment="CENTER_RIGHT">
+                        <Button text="✎" style="-fx-background-color: transparent;"/>
+                        <Button text="🗑" style="-fx-background-color: transparent;"/>
+                    </HBox>
+                </VBox>
+
+                <!-- Placeholder gray boxes -->
+                <StackPane style="-fx-background-color: #cccccc; -fx-border-radius: 5; -fx-background-radius: 5;" prefWidth="150" prefHeight="150" GridPane.rowIndex="0" GridPane.columnIndex="2"/>
+                <StackPane style="-fx-background-color: #cccccc; -fx-border-radius: 5; -fx-background-radius: 5;" prefWidth="150" prefHeight="150" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+                <StackPane style="-fx-background-color: #cccccc; -fx-border-radius: 5; -fx-background-radius: 5;" prefWidth="150" prefHeight="150" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+                <StackPane style="-fx-background-color: #cccccc; -fx-border-radius: 5; -fx-background-radius: 5;" prefWidth="150" prefHeight="150" GridPane.rowIndex="1" GridPane.columnIndex="2"/>
+                <StackPane style="-fx-background-color: #cccccc; -fx-border-radius: 5; -fx-background-radius: 5;" prefWidth="150" prefHeight="150" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+                <StackPane style="-fx-background-color: #cccccc; -fx-border-radius: 5; -fx-background-radius: 5;" prefWidth="150" prefHeight="150" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+                <StackPane style="-fx-background-color: #cccccc; -fx-border-radius: 5; -fx-background-radius: 5;" prefWidth="150" prefHeight="150" GridPane.rowIndex="2" GridPane.columnIndex="2"/>
+            </GridPane>
+        </VBox>
+    </center>
+</BorderPane>

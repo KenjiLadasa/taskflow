@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.collections.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+
+<BorderPane prefHeight="700" prefWidth="1200"
+            xmlns="http://javafx.com/javafx/17.0.12"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.main.taskflow.DashboardController">
+
+    <left>
+        <VBox prefWidth="210" spacing="18" style="-fx-background-color: #F4F4F4;">
+            <padding>
+                <Insets bottom="20" left="20" right="20" top="20" />
+            </padding>
+
+            <HBox spacing="12">
+                <Circle radius="22" style="-fx-fill: #cccccc;" />
+                <VBox spacing="2">
+                    <children>
+                        <Label style="-fx-font-size: 15px; -fx-font-weight: bold;" text="LDCU KO" />
+                        <Label style="-fx-font-size: 11px; -fx-text-fill: gray;" text="Student" />
+                    </children>
+                </VBox>
+            </HBox>
+
+            <Label style="-fx-text-fill: gray; -fx-font-size: 12px;" text="Menu" />
+
+            <VBox spacing="10">
+                <children>
+                    <Button prefWidth="160" text="Home" />
+                    <Button prefWidth="160" text="Notes" fx:id="btnNotes" onAction="#goToNotes"/>
+                    <Button prefWidth="160" text="To-Dos" />
+                    <Button prefWidth="160" text="Setting" />
+                </children>
+            </VBox>
+
+        </VBox>
+    </left>
+
+    <top>
+        <HBox spacing="20" style="-fx-background-color: white;">
+            <padding>
+                <Insets bottom="15" left="20" right="20" top="15" />
+            </padding>
+
+            <Label style="-fx-font-size: 24px; -fx-font-weight: bold;" text="Dashboard Activity" />
+
+            <Pane HBox.hgrow="ALWAYS" />
+
+            <HBox alignment="CENTER_RIGHT" spacing="10">
+                <children>
+                    <TextField prefWidth="220" promptText="Search" />
+                    <Button text="Search" />
+                </children>
+            </HBox>
+        </HBox>
+    </top>
+
+    <center>
+        <VBox spacing="25">
+            <padding>
+                <Insets left="20" right="20" top="20" />
+            </padding>
+
+            <HBox spacing="25">
+
+                <VBox prefHeight="220" prefWidth="450" style="-fx-background-color: #E5F6FF; -fx-alignment: center;">
+                    <children>
+                        <Label style="-fx-text-fill: gray;" />
+                  <ImageView fitHeight="303.0" fitWidth="451.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@picture%20nimo.png" />
+                     </image></ImageView>
+                    </children>
+                </VBox>
+
+                <VBox spacing="20">
+                    <children>
+
+                        <VBox prefWidth="190" style="-fx-background-color: black; -fx-background-radius: 10; -fx-padding: 15;">
+                            <children>
+                                <Label style="-fx-text-fill: white; -fx-font-size: 22px; -fx-font-weight: bold;" text="256" />
+                                <Label style="-fx-text-fill: white;" text="Task Completed" />
+                            </children>
+                        </VBox>
+
+                        <VBox prefWidth="190" style="-fx-background-color: black; -fx-background-radius: 10; -fx-padding: 15;">
+                            <children>
+                                <Label style="-fx-text-fill: white; -fx-font-size: 22px; -fx-font-weight: bold;" text="32" />
+                                <Label style="-fx-text-fill: white;" text="To-do Tasks" />
+                            </children>
+                        </VBox>
+
+                        <VBox prefWidth="190" style="-fx-background-color: black; -fx-background-radius: 10; -fx-padding: 15;">
+                            <children>
+                                <Label style="-fx-text-fill: white; -fx-font-size: 22px; -fx-font-weight: bold;" text="16" />
+                                <Label style="-fx-text-fill: white;" text="Ongoing Task" />
+                            </children>
+                        </VBox>
+
+                    </children>
+                </VBox>
+
+            </HBox>
+
+            <VBox spacing="10">
+                <children>
+                    <Label style="-fx-font-size: 18px; -fx-font-weight: bold;" text="Groups" />
+
+                    <ListView prefHeight="250">
+                        <items>
+                            <FXCollections fx:factory="observableArrayList">
+                                <String fx:value="Object Oriented Programming" />
+                                <String fx:value="Platform Technologies" />
+                                <String fx:value="Data Structure and Algorithms" />
+                                <String fx:value="Purposive Communication" />
+                            </FXCollections>
+                        </items>
+                    </ListView>
+                </children>
+            </VBox>
+
+        </VBox>
+    </center>
+
+</BorderPane>
